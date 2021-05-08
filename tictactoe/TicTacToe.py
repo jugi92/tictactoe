@@ -49,7 +49,7 @@ class Player:
         pass
 
 
-class MyPlayer(Player):
+class ArtificialPlayer(Player):
     def play(self):
         try:
             from random import randint
