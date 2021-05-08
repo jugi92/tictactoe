@@ -61,3 +61,23 @@ class ArtificialPlayer(Player):
                 self.play()
             else:
                 print("Seems like its not my turn")
+
+
+class LtrPlayer(Player):
+    def play(self):
+        for row_index in range(self.game.size):
+            for col_index in range(self.game.size): 
+                cell = self.game.playground[row_index][col_index]
+                if cell is None:
+                    self.game.put(col_index, row_index, self.sign)
+                    return
+
+
+class TtbPlayer(Player):
+    def play(self):
+        for col_index in range(self.game.size):
+            for row_index in range(self.game.size):
+                cell = self.game.playground[row_index][col_index]
+                if cell is None:
+                    self.game.put(col_index, row_index, self.sign)
+                    return
